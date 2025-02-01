@@ -28,17 +28,20 @@ variable "ami_id" {
 }
 
 variable "from_port" {
+  type    = number
   default = 22
 
 }
 
 variable "to_port" {
+  type    = number
   default = 22
 
 }
 
 variable "cidr_blocks" {
-    default = ["0.0.0.0/0"]
+  type    = list(string)
+  default = ["0.0.0.0/0"]
 
 }
 
