@@ -39,8 +39,8 @@ variable "cidr_blocks" {
 }
 
 variable "sg_tags" {
-    type    = map(string)
-    default = {
-             Name = "expense-backedn-dev"
+  type = map(string)
+  default = {
+    Name = "expense-backend-dev"
   }
 }

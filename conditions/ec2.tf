@@ -1,5 +1,5 @@
 resource "aws_instance" "ec2" {
-  
+
   ami                    = var.ami_id
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
   instance_type          = var.environment == "prod" ? "t3.micro" : "t2.micro"

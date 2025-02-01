@@ -11,8 +11,8 @@ variable "instance_type" {
 }
 
 variable "environment" {
-    default = "dev"
-  
+  default = "dev"
+
 }
 variable "ec2_tags" {
   type = map(string)
@@ -43,8 +43,8 @@ variable "cidr_blocks" {
 }
 
 variable "sg_tags" {
-    type    = map(string)
-    default = {
-             Name = "expense-backedn-dev"
+  type = map(string)
+  default = {
+    Name = "expense-backedn-dev"
   }
 }
