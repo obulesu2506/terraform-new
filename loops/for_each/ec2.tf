@@ -14,15 +14,17 @@ resource "aws_instance" "for_each-example" {
 resource "aws_security_group" "allow_tls" {
     name = "allow_tls"
     description = "Allow TLS Inbound and all Outbound rules"
-    /*
+    
    dynamic "ingress" {
-     for_each = var.ingress
+     for_each = [for port in var.ingress_ports : port if port.from_port = 22]
      content {
-
-        
+        from_port = ingress.value["from_port"]
+        to_port = ingress.value["to_port"]
+        protocol = ingress.value["protocol"]
+        cidr_blocks = ingress.value["cidr_blocks"]        
      }
    }
-    */
+    
     egress {
         from_port = 0
         to_port = 0
