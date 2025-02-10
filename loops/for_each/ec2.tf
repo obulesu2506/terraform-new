@@ -16,7 +16,7 @@ resource "aws_security_group" "allow_tls" {
     description = "Allow TLS Inbound and all Outbound rules"
     
    dynamic "ingress" {
-     for_each = [for port in var.ingress_ports : port if port.from_port = 22]
+     for_each = [for port in var.ingress_ports : port if port.from_port == 22]
      content {
         from_port = ingress.value["from_port"]
         to_port = ingress.value["to_port"]
