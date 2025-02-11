@@ -1,9 +1,9 @@
 resource "aws_instance" "workspace-example" {
-  ami = "ami-09c813fb71547fc4f" # This is our devops-practice AMI ID
-  vpc_security_group_ids = 
-  instance_type = lookup(var.instance_type, terraform.workspace)
+  ami                    = "ami-09c813fb71547fc4f" # This is our devops-practice AMI ID
+  vpc_security_group_ids = [aws_security_group.allow_tls.id]
+  instance_type          = lookup(var.instance_type, terraform.workspace)
   tags = {
-    Name = "terraform-demo-${terraform.workspace}"
+    Name    = "terraform-demo-${terraform.workspace}"
     Purpose = "terraform-practice"
 
   }

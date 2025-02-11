@@ -1,9 +1,9 @@
 variable "instance_type" {
-    type = map
-    default = {
-        dev = "t3.micro"
-        prod = "t3.small"
+  type = map(any)
+  default = {
+    dev  = "t3.micro"
+    prod = "t3.small"
 
-    }
-  
+  }
+
 }
