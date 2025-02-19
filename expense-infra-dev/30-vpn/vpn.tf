@@ -1,6 +1,6 @@
 resource "aws_key_pair" "openvpnas" {
   key_name   = "openvpnas"
-  public_key = file("E:\\devops\\SivaClasses\\DevSecOps\\openvpnas.pub")
+  public_key = file("E:\\Devops\\SivaClasses\\DevSecOps\\openvpnas.pub")
 }
 
 resource "aws_instance" "openvpn" {
