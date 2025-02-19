@@ -151,7 +151,7 @@ resource "aws_security_group_rule" "mysql_vpn" {
   source_security_group_id = module.vpn_sg.sg_id
   security_group_id        = module.mysql_sg.sg_id
 }
-
+#Security group between VPN to backend for connecting and then run Ansible related sconfiguration
 resource "aws_security_group_rule" "backend_vpn" {
   type                     = "ingress"
   from_port                = 22
@@ -160,7 +160,7 @@ resource "aws_security_group_rule" "backend_vpn" {
   source_security_group_id = module.vpn_sg.sg_id
   security_group_id        = module.backend_sg.sg_id
 }
-
+#Security group between backend and MYSQL for connecting and then run Ansible related sconfiguration
 resource "aws_security_group_rule" "mysql_backend" {
   type                     = "ingress"
   from_port                = 3306
