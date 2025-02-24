@@ -54,7 +54,7 @@ module "app_alb_sg" {
 
 }
 
-#ports 22(ssh), 443(http), 1194 (admin), 943 --> VPN Ports 
+#ports 22(ssh), 443(http), 1194 (admin), 943 (admin web UI) --> VPN Ports 
 module "vpn_sg" {
   source         = "git::https://github.com/obulesu2506/terraform-new.git//terraform-aws-sg?ref=main" #this one valid if the source present in github
   project_name   = var.project_name
