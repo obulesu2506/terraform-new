@@ -11,7 +11,13 @@ resource "aws_instance" "remote-state-example" {
 resource "aws_security_group" "allow_tls" {
   name = "allow_tls"
   description = "Allow TLS Inbound and all Outbound traffic"
-
+  ingress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  
   ingress {
     from_port = 22
     to_port = 22
